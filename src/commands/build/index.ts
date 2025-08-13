@@ -6,11 +6,12 @@ import { CONFIG_NAME } from "../../data";
 
 export const buildAction = async (passedConfig: BuildConfigType) => {
   const config = await startConfigProcess(CONFIG_NAME, passedConfig);
-  const { minifyClasses, src, out, dry } = config;
+  const { minifyClasses, src, out, dry, plugins } = config;
   const { classOptions, bundleOptions } = await getESBuildOptions({
     src,
     out,
     minifyClasses,
+    plugins,
   });
   if (dry) {
     const result = { config, classOptions, bundleOptions };

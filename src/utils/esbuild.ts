@@ -1,5 +1,5 @@
 import { glob } from "glob";
-import { BuildOptions } from "esbuild";
+import { BuildOptions, Plugin } from "esbuild";
 import { resolve } from "path";
 
 const defaultOutdir = "./.godot/GodotJS";
@@ -15,6 +15,7 @@ export type ESBuildType = {
   out?: string;
   minifyClasses?: boolean;
   sourcemap?: boolean;
+  plugins?: Plugin[];
 };
 
 export const getESBuildOptions = async ({
@@ -22,6 +23,7 @@ export const getESBuildOptions = async ({
   src,
   out,
   sourcemap,
+  plugins,
 }: ESBuildType) => {
   const outbase = resolve(src ?? defaultOutbase);
   const outdir = resolve(out ?? defaultOutdir);
@@ -40,6 +42,7 @@ export const getESBuildOptions = async ({
     outbase,
     outdir,
     sourcemap,
+    plugins,
   };
 
   const bundleOptions: BuildOptions = {
@@ -51,6 +54,7 @@ export const getESBuildOptions = async ({
     outbase,
     outdir,
     sourcemap,
+    plugins,
   };
   return { bundleOptions, classOptions };
 };

@@ -24,7 +24,7 @@
     "lint": "eslint *.ts",
     "postinstall": "tsx src/utils/prepare.ts",
     "prebuild": "tsx src/utils/prepare.ts",
-    "prepare": "husky",
+    "prepare": "npm run build",
     "pretest": "tsx src/utils/prepare.ts",
     "test": "vitest run --no-file-parallelism"
   },
