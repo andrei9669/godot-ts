@@ -13,6 +13,7 @@ Build typescript files
 | :---------------- | :---: | :----------------------------------------------------- | :------: | :------------------- |
 | `--src`           |       | Relative path where *.ts files located                 |    `❌`   | `"."`                |
 | `--out`           |       | Relative path where *.ts files are written             |    `❌`   | `"./.godot/GodotJS"` |
+| `--plugins`       |       | Plugins for esbuild                                    |    `❌`   | `[]`                 |
 | `--dry`           |       | Do a dry run with this command - prints/returns output |    `❌`   |                      |
 | `--minifyClasses` |       | Minifies GodotJS classes                               |    `❌`   | `true`               |
 
@@ -49,9 +50,10 @@ Watch typescript files
 > You can use `watch.json` as a config file. 
   By default it tries to search for the configuration otherwise use a correct path by passing `--config=./watch.json`.
 
-| long    | short | description                                            | required | defaultValue         |
-| :------ | :---: | :----------------------------------------------------- | :------: | :------------------- |
-| `--src` |       | Relative path where *.ts files located                 |    `❌`   | `"."`                |
-| `--out` |       | Relative path where *.ts files are written             |    `❌`   | `"./.godot/GodotJS"` |
-| `--dry` |       | Do a dry run with this command - prints/returns output |    `❌`   |                      |
+| long        | short | description                                            | required | defaultValue         |
+| :---------- | :---: | :----------------------------------------------------- | :------: | :------------------- |
+| `--src`     |       | Relative path where *.ts files located                 |    `❌`   | `"."`                |
+| `--out`     |       | Relative path where *.ts files are written             |    `❌`   | `"./.godot/GodotJS"` |
+| `--plugins` |       | Plugins for esbuild                                    |    `❌`   | `[]`                 |
+| `--dry`     |       | Do a dry run with this command - prints/returns output |    `❌`   |                      |
 
